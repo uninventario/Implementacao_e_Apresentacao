@@ -1,4 +1,5 @@
 package com.uninventario.uninventario.domain.laboratorio;
+
 import com.uninventario.uninventario.domain.database.Database;
 
 public class LaboratorioRepository {
@@ -7,16 +8,18 @@ public class LaboratorioRepository {
         Database.adicionarLaboratorio(laboratorio);
     }
 
-    public void buscarTodosLaboratorios() {
-        Database.buscarTodosLaboratorios();
+    public Laboratorio[] buscarTodosLaboratorios() {
+        Laboratorio[] resultado = Database.buscarTodosLaboratorios();
+        return resultado;
     }
 
-    public void buscarUmLaboratorio(Number id) {
-        Database.buscarUmLaboratorio(id);
+    public Laboratorio buscarUmLaboratorio(Number id) {
+        Laboratorio resultado = Database.buscarUmLaboratorio(id);
+        return resultado;
     }
 
-    public void editarLaboratorio(Laboratorio laboratorioALaboratorio) {
-        Database.editarLaboratorio(laboratorioALaboratorio);
+    public void editarLaboratorio(Laboratorio laboratorioAtualizado) {
+        Database.editarLaboratorio(laboratorioAtualizado);
     }
 
     public void deletarLaboratorio(Number id) {
