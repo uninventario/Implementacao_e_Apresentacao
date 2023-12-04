@@ -6,10 +6,9 @@ import com.uninventario.uninventario.domain.laboratorio.Laboratorio;
 
 public class Database {
 
-    static Usuario[] usuarios = new Usuario[0];
-    static Maquina[] maquinas = new Maquina[0];
     static Laboratorio[] laboratorios = new Laboratorio[0];
-
+    static Maquina[] maquinas = new Maquina[0];
+    static Usuario[] usuarios = new Usuario[0];
 
     // Laboratorio
     public static void adicionarLaboratorio(Laboratorio laboratorio) {
