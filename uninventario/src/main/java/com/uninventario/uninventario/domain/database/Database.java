@@ -19,7 +19,8 @@ public class Database {
             newLaboratories[i] = Database.laboratorios[i];
         }
 
-        newLaboratories[newLaboratories.length - 1] = laboratorio;
+        Laboratorio novoLaboratorio = new Laboratorio(laboratorio.getId(), laboratorio.getNome(), laboratorio.getPredio(), laboratorio.getAndar());
+        newLaboratories[newLaboratories.length - 1] = novoLaboratorio;
 
         Database.laboratorios = newLaboratories;
     }
@@ -64,14 +65,12 @@ public class Database {
         Database.laboratorios = newLaboratories;
       }
 
-      public static void resetarLaboratorio() {
+    public static void resetarLaboratorio() {
         Database.laboratorios = new Laboratorio[0];
       }
 
-
     // Maquina
-
-      public static void adicionarMaquina(Maquina maquina) {
+    public static void adicionarMaquina(Maquina maquina) {
         Maquina[] newMaquinas = new Maquina[Database.maquinas.length + 1];
         // Loop de percusão básico
         for (int i = 0; i < Database.maquinas.length; i++) {
@@ -124,13 +123,12 @@ public class Database {
         Database.maquinas = newMaquinas;
       }
 
-      public static void resetarMaquina() {
+    public static void resetarMaquina() {
         Database.maquinas = new Maquina[0];
       }
 
-      // Usuario 
-
-          public static void adicionarUsuario(Usuario usuario) {
+    // Usuario 
+    public static void adicionarUsuario(Usuario usuario) {
             Usuario[] newUsuarios = new Usuario[Database.usuarios.length + 1];
             // Loop de percusão básico
             for (int i = 0; i < Database.usuarios.length; i++) {
@@ -140,11 +138,11 @@ public class Database {
             Database.usuarios = newUsuarios;
         }
     
-        public static Usuario[] buscarTodosUsuarios() {
+    public static Usuario[] buscarTodosUsuarios() {
             return Database.usuarios;
         }
     
-        public static Usuario buscarUmUsuario(Number id) {
+    public static Usuario buscarUmUsuario(Number id) {
             for (int i = 0; i < Database.usuarios.length; i++) {
                 if (Database.usuarios[i].getId() == id) {
                     return Database.usuarios[i];
@@ -153,7 +151,7 @@ public class Database {
             return null;
         }
     
-        public static void editarUsuario(Usuario UsuarioAtualizada) {
+    public static void editarUsuario(Usuario UsuarioAtualizada) {
             for (int i = 0; i < Database.usuarios.length; i++) {
                 if (Database.usuarios[i].getId() == UsuarioAtualizada.getId()) {
                     Database.usuarios[i].setNome(UsuarioAtualizada.getNome());
@@ -164,7 +162,7 @@ public class Database {
             }
         }
     
-        public static void deletarUsuario(Number id) {
+    public static void deletarUsuario(Number id) {
             Usuario[] newUsuarios = new Usuario[Database.usuarios.length - 1];
           
             int novoIndice = 0;
@@ -180,7 +178,7 @@ public class Database {
             Database.usuarios = newUsuarios;
           }
     
-          public static void resetarUsuario() {
+    public static void resetarUsuario() {
             Database.usuarios = new Usuario[0];
           }
 }
